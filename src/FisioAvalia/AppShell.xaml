@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:views="clr-namespace:FisioAvalia.Views"
+       Title="FisioAvalia"
+       x:Class="FisioAvalia.AppShell"
+       BackgroundColor="#f0f0f0"   
+       TabBarDisabledColor="#25992d"
+       TabBarUnselectedColor="DimGray"
+       TabBarForegroundColor="#25992d"
+       ForegroundColor="#25992d"
+       TitleColor="#25992d">
+
+    <TabBar x:Name="bottomNavigation">
+        <Tab Title="Pacientes"
+             Icon="ic_patient.png"
+             >
+            <ShellContent>
+                <views:PatientsPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Home"
+             Icon="ic_home.png">
+            <ShellContent>
+                <views:HomePage/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Mais"
+             Icon="ic_mais.png">
+            <ShellContent>
+                <views:SettingsPage />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

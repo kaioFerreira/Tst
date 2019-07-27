@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FisioAvalia.ViewModels"
+             mc:Ignorable="d"
+             x:Class="FisioAvalia.Views.PatientImage"
+             Shell.TabBarIsVisible="False">
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Imagem" TextColor="#25992d" FontSize="Medium" HorizontalOptions="CenterAndExpand"  VerticalOptions="Center"/>
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.BindingContext>
+        <local:PatientImageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout>
+                <Image Source="{Binding Image}" />
+            </StackLayout>
+
+            <Label x:Name="lblDescricao" Margin="5,0,0,0" Grid.Row="1" Grid.Column="0" />
+            <Label x:Name="lblDate" Margin="0,0,5,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
+
+            <Frame BackgroundColor="#f0f0f0"  VerticalOptions="EndAndExpand" Padding="3">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Frame CornerRadius="9" HorizontalOptions="FillAndExpand" BorderColor="#25992d" Padding="0">
+
+
+                        <StackLayout Orientation="Horizontal">
+                            <Editor x:Name="txtDescricao" Placeholder="Novo Comentário"  HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button Text="Salvar" TextColor="White" CornerRadius="9" BackgroundColor="#25992d" Clicked="OnButtonSave"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FisioAvalia.Views.QuestionnairePage"
+             Shell.TabBarIsVisible="False"
+             Title="Questionário">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>                
+                <StackLayout Orientation="Vertical">
+
+                    <StackLayout Orientation="Horizontal" Margin="10,0,4,0" Padding="10">
+                        <Label Text="Lombar" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                        <Image Source="ic_arrow_button.png" HorizontalOptions="EndAndExpand" HeightRequest="15" Opacity="0.7"/>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    </StackLayout>
+                    <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    <StackLayout Orientation="Horizontal" Margin="10,0,4,0" Padding="10">
+                        <Label Text="Ombro" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0"/>
+                        <Image Source="ic_arrow_button.png" HorizontalOptions="EndAndExpand" HeightRequest="15" Opacity="0.7"/>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    </StackLayout>
+                    <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    <StackLayout Orientation="Horizontal" Margin="10,0,4,0" Padding="10">
+                        <Label Text="Cervical" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                        <Image Source="ic_arrow_button.png" HorizontalOptions="EndAndExpand" HeightRequest="15" Opacity="0.7"/>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    </StackLayout>
+                    <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    <StackLayout Orientation="Horizontal" Margin="10,0,4,0" Padding="10">
+                        <Label Text="Joelho" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                        <Image Source="ic_arrow_button.png" HorizontalOptions="EndAndExpand" HeightRequest="15" Opacity="0.7"/>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    </StackLayout>
+                    <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    <StackLayout Orientation="Horizontal" Margin="10,0,4,0" Padding="10">
+                        <Label Text="Tornozelo" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                        <Image Source="ic_arrow_button.png" HorizontalOptions="EndAndExpand" HeightRequest="15" Opacity="0"/>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    </StackLayout>
+                    <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+
+
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+    </ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FisioAvalia"
+             mc:Ignorable="d"
+             x:Class="FisioAvalia.Views.NewEvolutionPage">
+
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Evolução" TextColor="#25992d" FontSize="Medium" HorizontalOptions="CenterAndExpand"  VerticalOptions="Center"/>
+            <Label Text="Concluir" TextColor="#25992d" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="lbl_concluir"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0" Padding="5" Grid.Column="0">
+                        <Label Text="Registrar evolução" TextColor="#25992d" FontSize="30" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label x:Name="lbl_date" FontSize="15" VerticalOptions="Center" TextColor="#25992d" HorizontalOptions="Start"/>
+                        <Label x:Name="lbl_time" Text="09:13" FontSize="15" VerticalOptions="Center" TextColor="#25992d" HorizontalOptions="Start"/>
+
+                        <Frame BorderColor="Gray" CornerRadius="15" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="tap"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="ALTERAR DATA" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Gray"/>
+                        </Frame>
+                    </StackLayout>
+                    <ScrollView Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+                        <StackLayout Padding="5">
+                            <SearchBar Placeholder="Escreva aqui..." BackgroundColor="Transparent" PlaceholderColor="Gray" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Keyboard="Text"/>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </StackLayout>
+            <ContentView x:Name="frm_date_time" IsVisible="False" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="close_tap"/>
+                </ContentView.GestureRecognizers>
+                <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" CornerRadius="9">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <DatePicker x:Name="date_picker"/>
+                        <TimePicker x:Name="time_picker"/>
+                    </StackLayout>
+                </Frame>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

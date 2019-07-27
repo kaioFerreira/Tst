@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FisioAvalia.ViewModels"
+             mc:Ignorable="d"
+             x:Class="FisioAvalia.Views.ProfilePatientPage"
+             Shell.TabBarIsVisible="False"
+             Title="Perfil">
+
+    <Shell.TitleView>
+
+        <StackLayout Orientation="Horizontal" Margin="0,0,10,0">
+            
+            <Label Text="Perfil do Paciente" TextColor="#25992d" 
+                   FontSize="Medium" HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+            <ImageButton Source="ic_menu_ball_button.png" BackgroundColor="#f0f0f0"
+                         HorizontalOptions="End" VerticalOptions="Center"
+                         HeightRequest="20"  WidthRequest="20" 
+                         CornerRadius="50" Clicked="TopOptionMenu" />
+
+
+
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout>
+                    <ScrollView>
+                        <StackLayout>
+
+                            <StackLayout BackgroundColor="#f0f0f0">
+
+                                <StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="#25992d">
+
+                                        <Image Source="ic_photo_user.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10,5,0,5"/>
+
+                                        <StackLayout Orientation="Vertical" Margin="10,5,0,0">
+                                            <Label Text="10" FontSize="Medium" TextColor="White" HorizontalOptions="Center" VerticalOptions="End"/>
+                                            <Label Text="Avaliações" TextColor="White" HorizontalOptions="Center" VerticalOptions="Start"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Margin="10,7,0,0">
+                                            <Label Text="15" FontSize="Medium" TextColor="White" HorizontalOptions="Center" VerticalOptions="End"/>
+                                            <Label Text="Evoluções" TextColor="White" HorizontalOptions="Center" VerticalOptions="Start"/>
+                                        </StackLayout>
+                                    </StackLayout>
+
+
+
+                                    <StackLayout>
+                                        <StackLayout Orientation="Vertical" Margin="10,10,10,10">
+
+                                            <Label Text="Venancio Benevides"  FontSize="Medium" HorizontalOptions="Start"/>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="ic_number_phone.png" HeightRequest="15"/>
+                                                <Label Text="(62) 99616-7825" TextColor="#089660" VerticalOptions="Center"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="ic_placeholder.png" HeightRequest="15"/>
+                                                <Label Text="Rua 203, Setor Leste Universitário - Goiânia GO - CEP 74603-060" TextColor="#089660" VerticalOptions="Center"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Diagnóstico: " FontAttributes="Bold"/>
+                                                <Label Text="Perna grande" TextColor="#089660" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </StackLayout>
+
+
+
+
+                                <StackLayout  Margin="0,5,0,0" >
+                                    <StackLayout BackgroundColor="#757575" Padding="0.2" Opacity="0.5" Margin="0,0,0,5"/>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout x:Name="StackImage" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnButtonImages"/>
+                                            </StackLayout.GestureRecognizers>
+                                            <Image Source="ic_camera_button.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30"/>
+                                            <StackLayout x:Name="LineImage" IsVisible="True" BackgroundColor="#757575" Padding="0.8"  Opacity="0.8"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Grid.Row="0">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnButtonEvaluation"/>
+                                            </StackLayout.GestureRecognizers>
+                                            <Image Source="ic_list_assessments_button" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30"/>
+                                            <StackLayout x:Name="LineEvaluation" IsVisible="False" BackgroundColor="#757575" Padding="0.8"  Opacity="0.8"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="2" Grid.Row="0">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnButtonEvolution"/>
+                                            </StackLayout.GestureRecognizers>
+                                            <Image Source="ic_graphic_Evolution_button" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30"/>
+                                            <StackLayout x:Name="LineEvolution" IsVisible="False" BackgroundColor="#757575" Padding="0.8"  Opacity="0.8"/>
+                                        </StackLayout>
+
+
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+
+
+                            <ScrollView>
+                                <StackLayout>
+                                    <CollectionView x:Name="CollectionImagens" ItemsSource="{Binding Images}" SelectionMode="Single" >
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Vertical" Span="3"/>
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Vertical" Margin="2.5, 2.5, 2.5, 2.5">
+
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnCollectionViewSelectionChangedImage"/>
+                                                            <SwipeGestureRecognizer Threshold="20" Direction="Left" Swiped="OnSwipedImage"/>
+                                                        </StackLayout.GestureRecognizers>
+                                                        <Image Grid.RowSpan="3"
+
+                                                       Source="{Binding ImageUrl}"
+                                                        Aspect="AspectFill"
+                                                        WidthRequest="120"
+                                                        HeightRequest="120"/>
+
+                                                    </StackLayout>
+
+
+                                                </Grid>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </ScrollView>
+
+                            <ScrollView>
+                                <StackLayout>
+                                    <CollectionView x:Name="CollectionEvaluations" ItemsSource="{Binding Evaluations}">
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Vertical" Span="1"/>
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.RowSpan="1">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnCollectionViewSelectionChangedEvaluation"/>
+                                                            <SwipeGestureRecognizer Threshold="20" Direction="Right" Swiped="OnSwipedEvaluation"/>
+                                                            <SwipeGestureRecognizer Threshold="20" Direction="Left" Swiped="OnSwipedEvaluation"/>
+                                                        </StackLayout.GestureRecognizers>
+                                                        <StackLayout Orientation="Horizontal" Margin="10,8,10,0">
+                                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                                <Label Text="{Binding Evaluation}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#25992d" Opacity="0.7"/>
+                                                                <Label Text="{Binding Date}" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.3" FontAttributes="Italic"/>
+                                                            </StackLayout>
+                                                            <Image Source="ic_right_arrow" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="20" WidthRequest="20" Opacity="0.7"/>
+                                                        </StackLayout>
+                                                        <StackLayout Padding="0.1" BackgroundColor="#757575" Opacity="0.4"/>
+                                                    </StackLayout>
+
+                                                </Grid>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+
+
+
+                            </ScrollView>
+
+
+                            <ScrollView>
+                                <StackLayout>
+                                    <CollectionView x:Name="CollectionEvolution" ItemsSource="{Binding Evolutions}">
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Vertical" Span="1"/>
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Grid.RowSpan="1">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnCollectionViewSelectionChangedEvaluation"/>
+                                                            <SwipeGestureRecognizer Threshold="20" Direction="Right" Swiped="OnSwipedEvolution"/>
+                                                            <SwipeGestureRecognizer Threshold="20" Direction="Left" Swiped="OnSwipedEvolution"/>
+                                                        </StackLayout.GestureRecognizers>
+                                                        <StackLayout Orientation="Horizontal" Margin="10,8,10,0">
+                                                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                                                <Label Text="{Binding Evolution}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="#25992d" Opacity="0.7" />
+                                                                <Label Text="{Binding Date}" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.3" FontAttributes="Italic"/>
+                                                            </StackLayout>
+                                                            <Image Source="ic_right_arrow" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="20" WidthRequest="20" Opacity="0.7"/>
+                                                        </StackLayout>
+                                                        <StackLayout Padding="0.1" BackgroundColor="#757575" Opacity="0.4"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </ScrollView>
+
+                        </StackLayout>
+                    </ScrollView>
+
+                </StackLayout>
+            </Grid>
+
+
+            <ContentView x:Name="popupMenuView" Padding="8" BackgroundColor="#C0808080" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All ">
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonCloseMenu"/>
+                </ContentView.GestureRecognizers>
+                <Frame CornerRadius="3" HorizontalOptions="End"  VerticalOptions="Start" Margin="0,0,10,0" >
+                    <StackLayout BackgroundColor="White" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout  Margin="5,0,0,4">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnButtonEditProfile"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Editar perfil"  HorizontalOptions="Start" FontSize="Default" TextColor="Black"/>
+                        </StackLayout>
+                        
+                        <StackLayout Margin="5,6,0,4">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnButtonAddPhotograph"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Adicionar foto" HorizontalOptions="Start" FontSize="Default" TextColor="Black"/>
+                        </StackLayout>
+                        
+                        <StackLayout Margin="5,6,0,4">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnButtonAddEvaluation"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Adicionar Avaliação"  HorizontalOptions="Start" FontSize="Default" TextColor="Black"/>
+                        </StackLayout>
+                       
+                        <StackLayout Margin="5,6,0,0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnButtonAddEvolution"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Adicionar Evolução" HorizontalOptions="Start" FontSize="Default" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ContentView>
+
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

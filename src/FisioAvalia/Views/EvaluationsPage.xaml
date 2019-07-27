@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FisioAvalia.Views.EvaluetionsPage"
+             Shell.TabBarIsVisible="False"
+             Title="Avaliações"
+             >
+  <ContentPage.Content>
+        <StackLayout >
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="0,5,0,0">
+
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="Anamnese" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                            <Image Source="ic_right_arrow" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="20" />
+                            <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        </StackLayout>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="Exame Fisico" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                            <Image Source="ic_right_arrow" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="20" />
+                            <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        </StackLayout>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        <StackLayout Orientation="Horizontal"  Padding="10">
+                            <Label Text="Observações Finais" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                            <Image Source="ic_right_arrow" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="20" />
+                            <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        </StackLayout>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        <StackLayout Orientation="Horizontal"  Padding="10">
+                            <Label Text="Diagnóstico Fisioterapêutico/CIF" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                            <Image Source="ic_right_arrow" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="20"/>
+                            <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        </StackLayout>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        <StackLayout Orientation="Horizontal"  Padding="10">
+                            <Label Text="Objetivos do Tratamento" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                            <Image Source="ic_right_arrow" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="20" />
+                            <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        </StackLayout>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="Conduta" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Opacity="0.5" IsEnabled="False" FontSize="Medium" FontAttributes="Bold"/>
+                            <Image Source="ic_right_arrow" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="20"/>
+                            <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                        </StackLayout>
+                        <StackLayout Padding="0.8" BackgroundColor="#EDEDED"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FisioAvalia.ViewModels"
+             x:Class="FisioAvalia.Views.HomePage">
+
+    <ContentPage.BindingContext>
+        <local:HomeViewModel/>
+    </ContentPage.BindingContext>
+
+    <Shell.TitleView >
+        <StackLayout Orientation="Horizontal" Margin="10,10">
+            <Label Text="Venancio de Souza Benevides" TextColor="#25992e" FontSize="Medium"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+        </StackLayout>
+    </Shell.TitleView>
+
+
+    <ContentPage.Content>
+
+
+
+        <Grid BackgroundColor="White">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="165"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#f2f2f2" Orientation="Vertical">
+                <StackLayout Orientation="Vertical" Margin="0,10,5,0">
+                    <Image HeightRequest="100" WidthRequest="100" Source="ic_logo_perfil_button.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <Label Text="{Binding Email}" Margin="0,10" FontSize="Default" TextColor="Blue" HorizontalOptions="Center" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+
+            <Frame x:Name="Evoluções" CornerRadius="9" Margin="10,20,0,0" Padding="0" BackgroundColor="#673C3C" Grid.Row="1" Grid.Column="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonOpenEvolutionsClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout >
+
+                    <Label Text="Evoluções" HorizontalOptions="Start" VerticalOptions="Start" TextColor="White" Margin="5,5"/>
+                    <Image Source="ic_graphic.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" Margin="5,5"/>
+
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="Avaliações" CornerRadius="9"  Margin="0,20,10,0" Padding="0" BackgroundColor="#3422FF" Grid.Row="1" Grid.Column="1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonOpenEvaluetionsClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout >
+                    <Label Text="Avaliações" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,5"/>
+                    <Image Source="ic_list" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" Margin="5,5" VerticalOptions="End"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="Financeiro" CornerRadius="9" Margin="10,0,0,0" Padding="0" BackgroundColor="#048201" Grid.Row="2" Grid.Column="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonOpenFinancialClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout >
+                    <Label Text="Minhas finanças" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,5"/>
+                    <Image Source="ic_coin" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" Margin="5,5"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="ButtonSchedule" CornerRadius="9" Margin="0,0,10,0" Padding="0" BackgroundColor="#37849C" Grid.Row="2" Grid.Column="1" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonOpenScheduleClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout >
+                    <Label Text="Minha agenda" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,5"/>
+                    <Image Source="ic_calendar" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" Margin="5,5"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="Questionario" CornerRadius="9" Margin="10,0,0,10" Padding="0" BackgroundColor="#C01A1A" Grid.Row="3" Grid.Column="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonOpenQuestionnairesClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout >
+
+                    <Label Text="Questionários" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,5"/>
+                    <Image Source="ic_questionary" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" Margin="5,5"/>
+
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="9" Padding="0" Margin="0,0,10,10" BackgroundColor="#FFA132" Grid.Row="3" Grid.Column="1">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonOpenRecordClicked" />
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Label Text="Minhas fichas" TextColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,5"/>
+                    <Image Source="ic_record" WidthRequest="20" HeightRequest="20" HorizontalOptions="End" Margin="5,5"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>

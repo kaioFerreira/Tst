@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FisioAvalia.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="MasterLayout">
+
+            <StackLayout x:Name="LogoStack" >
+                <Image x:Name="LoginLogo" Source="logo_text.png" Margin="0,80,0,80" />
+            </StackLayout>
+            
+            <StackLayout x:Name="StackLoginEntry" VerticalOptions="StartAndExpand" >
+                
+
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Green" IsRunning="True"/>
+
+                <Label x:Name="labelEmail" Text="Email"/>
+                <Entry x:Name="entryEmail" Placeholder="Email" />
+                <Label x:Name="labelPassword" Text="Password" />
+                <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True" />
+                <Button x:Name="buttonLogin" Text="Login" Clicked="OnLoginClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
