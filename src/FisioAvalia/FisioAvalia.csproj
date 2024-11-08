@@ -33,7 +33,7 @@
     <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
     <PackageReference Include="MySql.Data.Entity" Version="6.10.8" />
     <PackageReference Include="Oracle.ManagedDataAccess.EntityFramework" Version="19.3.0" />
-    <PackageReference Include="Refit" Version="4.6.107" />
+    <PackageReference Include="Refit" Version="7.2.22" />
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.1.0.51" />
     <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="17.1.0.52" />
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />  
